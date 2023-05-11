@@ -61,6 +61,11 @@ export function App() {
             label: `${item.firstName} ${item.lastName}`,
           })}
           onChange={async (newValue) => {
+            // Handle all employes
+            if (newValue?.id === "") {
+              return loadAllTransactions()
+            }
+
             if (newValue === null) {
               return
             }
